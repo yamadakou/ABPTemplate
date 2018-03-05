@@ -9,6 +9,7 @@ using Abp.Web.Mvc;
 using Abp.Web.SignalR;
 using Abp.Zero.Configuration;
 using ABPTemplate.Api;
+using WebHooks.Receiver.Api;
 using Hangfire;
 
 namespace ABPTemplate.Web
@@ -17,6 +18,7 @@ namespace ABPTemplate.Web
         typeof(ABPTemplateDataModule),
         typeof(ABPTemplateApplicationModule),
         typeof(ABPTemplateWebApiModule),
+        typeof(WebHooksApiModule),
         typeof(AbpWebSignalRModule),
         //typeof(AbpHangfireModule), - ENABLE TO USE HANGFIRE INSTEAD OF DEFAULT JOB MANAGER
         typeof(AbpWebMvcModule))]

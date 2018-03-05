@@ -3816,6 +3816,10 @@
       <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
       <Name>ABPTemplate.WebApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebHooks.Receiver\WebHooks.Receiver.csproj">
+      <Project>{9e43780b-9199-4ee4-a8f7-627c6ef93133}</Project>
+      <Name>WebHooks.Receiver</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

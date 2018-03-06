@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.WebHooks;
 using Newtonsoft.Json.Linq;
+using Castle.Core.Logging;
+using Abp.Logging;
+using System.Collections.Specialized;
+using System.Net.Http;
 
 namespace WebHooks.Receiver.Api.WebHooks
 {
@@ -22,6 +26,13 @@ namespace WebHooks.Receiver.Api.WebHooks
 
             // Get the action for this WebHook coming from the action query parameter in the URI
             string action = context.Actions.FirstOrDefault();
+
+            // Get query parameter in the URI
+            NameValueCollection queryParameters = context.Request.RequestUri.ParseQueryString();
+
+            LogHelper.Logger.DebugFormat("data={0}", data);
+            LogHelper.Logger.DebugFormat("action={0}", action);
+            LogHelper.Logger.DebugFormat("queryParameters={0}", queryParameters);
 
             return Task.FromResult(true);
         }

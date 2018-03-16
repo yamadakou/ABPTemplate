@@ -10,6 +10,7 @@ using Abp.Configuration.Startup;
 using Abp.Modules;
 using Abp.WebApi;
 using Microsoft.AspNet.WebHooks.Controllers;
+using WebHooks.Receiver.Api.Controllers;
 using WebHooks.Receiver.Api.WebHooks;
 
 namespace WebHooks.Receiver.Api
@@ -21,11 +22,14 @@ namespace WebHooks.Receiver.Api
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
             IocManager.RegisterAssemblyByConvention(Assembly.GetAssembly(typeof(WebHookReceiversController)));
+            IocManager.RegisterAssemblyByConvention(Assembly.GetAssembly(typeof(AlmSyncReceiversController)));
 
             // Web API routes
             Configuration.Modules.AbpWebApi().HttpConfiguration.MapHttpAttributeRoutes();
 
-            Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveGenericJsonWebHooks();
+            Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveWorkItemsWebHooks();
+            // GenericJsonの場合
+            //Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveGenericJsonWebHooks();
 
             // Customの場合
             //Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveCustomWebHooks();

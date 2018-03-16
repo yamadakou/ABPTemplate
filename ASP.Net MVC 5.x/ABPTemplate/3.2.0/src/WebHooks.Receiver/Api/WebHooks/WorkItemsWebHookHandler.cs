@@ -12,11 +12,11 @@ using System.Net.Http;
 
 namespace WebHooks.Receiver.Api.WebHooks
 {
-    public class GenericJsonWebHookHandler : WebHookHandler
+    public class WorkItemsWebHookHandler : WebHookHandler
     {
-        public GenericJsonWebHookHandler()
+        public WorkItemsWebHookHandler()
         {
-            this.Receiver = GenericJsonWebHookReceiver.ReceiverName;
+            this.Receiver = WorkItemsWebHookReceiver.ReceiverName;
         }
 
         public override Task ExecuteAsync(string receiver, WebHookHandlerContext context)
@@ -29,7 +29,7 @@ namespace WebHooks.Receiver.Api.WebHooks
 
             // Get query parameter in the URI
             var queryParameters = context.Request.RequestUri.ParseQueryString();
-            if(queryParameters.AllKeys.Any(k => k == "key"))
+            if (queryParameters.AllKeys.Any(k => k == "key"))
             {
                 var key = queryParameters["key"];
             }

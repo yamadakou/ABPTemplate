@@ -37,6 +37,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <IncludeIisSettings>false</IncludeIisSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -581,24 +584,23 @@
     <Content Include="js\helpers.js" />
     <Content Include="js\main.js" />
     <Content Include="js\script.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\abp.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.jtable.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.moment.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\libs\requirejs\plugins\service.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\scripts\utils\ie10fix.js" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.css" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.min.css" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.mixings.css" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.mixings.min.css" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="lib\abp-web-resources\gulpfile.js" />
+    <Content Include="Abp\Framework\scripts\abp.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.blockUI.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.jquery.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.jtable.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.moment.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.signalr.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.spin.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.sweet-alert.js" />
+    <Content Include="Abp\Framework\scripts\libs\abp.toastr.js" />
+    <Content Include="Abp\Framework\scripts\libs\angularjs\abp.ng.js" />
+    <Content Include="Abp\Framework\scripts\libs\requirejs\plugins\service.js" />
+    <Content Include="Abp\Framework\scripts\utils\ie10fix.js" />
+    <Content Include="Abp\Framework\styles\abp.css" />
+    <Content Include="Abp\Framework\styles\abp.min.css" />
+    <Content Include="Abp\Framework\styles\abp.mixings.css" />
+    <Content Include="Abp\Framework\styles\abp.mixings.min.css" />
+    <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
     <Content Include="lib\animate.css\animate.css" />
     <Content Include="lib\animate.css\animate.min.css" />
     <Content Include="lib\animate.css\gulpfile.js" />
@@ -2338,16 +2340,10 @@
     <Content Include="App\Main\views\tenants\createModal.cshtml" />
     <Content Include="App\Main\views\users\createModal.cshtml" />
     <Content Include="App\Main\views\users\index.cshtml" />
-    <Content Include="lib\abp-web-resources\.bower.json" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.css.map" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.less" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.mixings.css.map" />
-    <Content Include="lib\abp-web-resources\Abp\Framework\styles\abp.mixings.less" />
-    <Content Include="lib\abp-web-resources\bower.json" />
-    <Content Include="lib\abp-web-resources\LICENSE" />
-    <Content Include="lib\abp-web-resources\package.json" />
-    <Content Include="lib\abp-web-resources\packages.config" />
-    <Content Include="lib\abp-web-resources\README.md" />
+    <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="Abp\Framework\styles\abp.less" />
+    <Content Include="Abp\Framework\styles\abp.mixings.css.map" />
+    <Content Include="Abp\Framework\styles\abp.mixings.less" />
     <Content Include="lib\animate.css\.bower.json" />
     <Content Include="lib\animate.css\animate-config.json" />
     <Content Include="lib\animate.css\bower.json" />
@@ -2844,6 +2840,7 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\AWSCustomProfile.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_af-na.js" />
     <Content Include="Scripts\i18n\angular-locale_af-za.js" />
@@ -3816,6 +3813,10 @@
       <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
       <Name>ABPTemplate.WebApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebHooks.Receiver\WebHooks.Receiver.csproj">
+      <Project>{9e43780b-9199-4ee4-a8f7-627c6ef93133}</Project>
+      <Name>WebHooks.Receiver</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -3853,6 +3854,42 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />

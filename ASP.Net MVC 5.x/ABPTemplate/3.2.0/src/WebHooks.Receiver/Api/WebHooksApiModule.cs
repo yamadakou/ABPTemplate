@@ -21,13 +21,12 @@ namespace WebHooks.Receiver.Api
         public override void Initialize()
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-            IocManager.RegisterAssemblyByConvention(Assembly.GetAssembly(typeof(WebHookReceiversController)));
-            IocManager.RegisterAssemblyByConvention(Assembly.GetAssembly(typeof(AlmSyncReceiversController)));
 
             // Web API routes
             Configuration.Modules.AbpWebApi().HttpConfiguration.MapHttpAttributeRoutes();
 
-            Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveWorkItemsWebHooks();
+            Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveGenericJsonWebHooks();
+
             // GenericJsonの場合
             //Configuration.Modules.AbpWebApi().HttpConfiguration.InitializeReceiveGenericJsonWebHooks();
 

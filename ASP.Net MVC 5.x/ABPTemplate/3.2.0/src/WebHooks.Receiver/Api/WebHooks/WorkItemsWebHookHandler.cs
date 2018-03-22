@@ -29,10 +29,12 @@ namespace WebHooks.Receiver.Api.WebHooks
 
             // Get query parameter in the URI
             var queryParameters = context.Request.RequestUri.ParseQueryString();
+            string key = null;
             if (queryParameters.AllKeys.Any(k => k == "key"))
             {
-                var key = queryParameters["key"];
+                key = queryParameters["key"];
             }
+            LogHelper.Logger.DebugFormat("key={0}", key);
             LogHelper.Logger.DebugFormat("data={0}", data);
             LogHelper.Logger.DebugFormat("action={0}", action);
             LogHelper.Logger.DebugFormat("queryParameters={0}", queryParameters);

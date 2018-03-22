@@ -11,7 +11,7 @@ using System.Web.Http.Controllers;
 
 namespace Microsoft.AspNet.WebHooks
 {
-    public abstract class WorkItemsWebHookReceiver : WebHookReceiver
+    public class WorkItemsWebHookReceiver : WebHookReceiver
     {
         internal const string RecName = "workitems";
         internal const string ActionQueryParameter = "action";

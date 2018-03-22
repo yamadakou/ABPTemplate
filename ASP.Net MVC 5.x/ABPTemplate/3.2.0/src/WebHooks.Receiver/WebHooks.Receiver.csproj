@@ -232,7 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\Controllers\AlmSyncReceiversController.cs" />
-    <Compile Include="Api\Extensions\HttpConfigurationExtensions.cs" />
     <Compile Include="Api\WebHooksApiModule.cs" />
     <Compile Include="Api\WebHooks\CustomWebHookHandler.cs" />
     <Compile Include="Api\WebHooks\GenericJsonWebHookHandler.cs" />

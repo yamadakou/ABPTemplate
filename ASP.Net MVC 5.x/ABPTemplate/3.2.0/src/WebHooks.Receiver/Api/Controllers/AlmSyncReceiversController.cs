@@ -16,7 +16,7 @@ namespace WebHooks.Receiver.Api.Controllers
 {
     [ApiExplorerSettings(IgnoreApi = true)]
     [RoutePrefix("api/sync")]
-    public class AlmSyncReceiversController : WebHookReceiversController
+    public class AlmSyncReceiversController : ApiController
     {
         private const string c_WebHookReceiverRouteNames_AlmSyncReceiversAction = "AlmSyncReceiversAction";
         /// <summary>
@@ -25,7 +25,7 @@ namespace WebHooks.Receiver.Api.Controllers
         [Route("{webHookReceiver}/{id?}", Name = c_WebHookReceiverRouteNames_AlmSyncReceiversAction)]
         [AllowAnonymous]
         [SuppressMessage("Microsoft.Design", "CA1026:Default parameters should not be used", Justification = "This is an established parameter binding pattern for Web API.")]
-        public new Task<IHttpActionResult> Get(string webHookReceiver, string id = "")
+        public Task<IHttpActionResult> Get(string webHookReceiver, string id = "")
         {
             return ProcessWebHook(webHookReceiver, id);
         }
@@ -36,7 +36,7 @@ namespace WebHooks.Receiver.Api.Controllers
         [Route("{webHookReceiver}/{id?}")]
         [AllowAnonymous]
         [SuppressMessage("Microsoft.Design", "CA1026:Default parameters should not be used", Justification = "This is an established parameter binding pattern for Web API.")]
-        public new Task<IHttpActionResult> Head(string webHookReceiver, string id = "")
+        public Task<IHttpActionResult> Head(string webHookReceiver, string id = "")
         {
             return ProcessWebHook(webHookReceiver, id);
         }
@@ -47,7 +47,7 @@ namespace WebHooks.Receiver.Api.Controllers
         [Route("{webHookReceiver}/{id?}")]
         [AllowAnonymous]
         [SuppressMessage("Microsoft.Design", "CA1026:Default parameters should not be used", Justification = "This is an established parameter binding pattern for Web API.")]
-        public new Task<IHttpActionResult> Post(string webHookReceiver, string id = "")
+        public Task<IHttpActionResult> Post(string webHookReceiver, string id = "")
         {
             return ProcessWebHook(webHookReceiver, id);
         }

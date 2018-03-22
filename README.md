@@ -2,7 +2,13 @@
 - [Startup Templates](https://aspnetboilerplate.com/Templates)で作成
 
 ## ASP.Net MVC 5.xのTemplate
-- 現在は、ASP.Net MVC5で作成したTemplateを元に利用Packageの更新後、動作確認を行った際のファイルを初版として登録
+- ASP.Net MVC5で作成したTemplateを元に利用Packageの更新後、動作確認を行った際のファイルを初版として登録
+- 現在はAsp.Net WebHooksの検証用試作プロジェクトを追加
+  - ASP.Net WebHoolsについては、以下を参照
+    - GitHub
+      - https://github.com/aspnet/AspNetWebHooks
+    - ドキュメント
+      - https://docs.microsoft.com/en-us/aspnet/webhooks/
 
 #### 動作確認での事前準備
 - RDB(SQL Server)にデータベース名「ABPTemplate」でデータベースを作成する。
